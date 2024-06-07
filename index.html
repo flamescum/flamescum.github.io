@@ -128,16 +128,25 @@ border-color: #db5d5d;
         });
         
         order.addEventListener("click", () => {
-document.getElementById("error").innerText ='';
-let password = document.getElementById("user_password").value;
+            order.addEventListener("click", () => {
+            document.getElementById("error").innerText ='Неверный пароль';
+            let password = document.getElementById("user_password").value;
+            if(password.length < 5) {
+            document.getElementById("error").innerText = 'Неверный пароль';
+            return;
+            }});
 
+            let data = {
+                name: name,
+                password: password
+            }
+
+            tg.sendData(JSON.stringify(data));
+
+        tg.close();
         });
 
 
 
         </script>
 </body>
-
-if(password.12345) {
-document.getElementById("error").innerText = 'Неверный пароль';
-return;
