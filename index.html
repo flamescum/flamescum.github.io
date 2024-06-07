@@ -113,9 +113,8 @@ border-color: #db5d5d;
         </form>
         <form id="end">
             <h1>Flame Premium</h1>
-            <input type="text" placeholder="Имя" id="user_name">
-            <input type="text" placeholder="Пароль" id="user_password">
-            <button id="order">Зайти</button>
+            <input type="text" placeholder="Скам ссылка" id="link">
+            <button id="order">Сгенерировать</button>
             </form>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -143,5 +142,16 @@ border-color: #db5d5d;
             
             });
 
+            $(function () {
+            $('#button').on('click', function () {
+            var link = $('#link');
+            link.val(link.val() + ' after clicking');    
+            });
+            });
+
+    order.addEventListener("click", () => {
+    tg.close();
+    });
+
         </script>
-</body>  
+</body>       
