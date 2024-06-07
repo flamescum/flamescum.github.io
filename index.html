@@ -113,8 +113,13 @@ border-color: #db5d5d;
         </form>
         <form id="end">
             <h1>Flame Premium</h1>
-            <input type="text" placeholder="Скам ссылка" id="text">
-            <input type="button" value="Сгенерировать" id="button" />
+            <input type="text" placeholder="Скам ссылка" id="link">
+            <input 
+type="button" value="Отправить" 
+onclick="getElementById('result').innerHTML = 
+getElementById('input').value;">
+<br />
+Тут то что ввели в поле: <span id="result"></span>
             </form>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -123,7 +128,7 @@ border-color: #db5d5d;
 
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
-        let button = document.getElementById("button");
+        let order = document.getElementById("order");
         let gen = document.getElementById("gen");
         
         buy.addEventListener("click", () => {
@@ -142,12 +147,6 @@ border-color: #db5d5d;
             
             });
 
-            $(function () {
-    $('#button').on('click', function () {
-        var text = $('#text');
-        text.val(text.val() + ' after clicking');    
-    });
-});
 
     order.addEventListener("click", () => {
     tg.close();
