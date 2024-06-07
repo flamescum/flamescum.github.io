@@ -113,19 +113,13 @@ border-color: #db5d5d;
         </form>
         <form id="end">
             <h1>Flame Premium</h1>
-            <input type="scum" placeholder="Скам ссылка" id="link">
-            <button onclick="text()", id="order">Сгенерировать</button>
+            <input type="text" placeholder="Скам ссылка" id="link">
+            <button id="order">Скопировать</button>
             </form>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
         <script>
-
-            const scum = document.querySelector("#scum");
-
-            function text() {
-            scum.value = scum.value + "after clicking";
-            }
 
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
@@ -136,16 +130,15 @@ border-color: #db5d5d;
             
         document.getElementById("main").style.display = "none";
         document.getElementById("form").style.display = "block";
-        document.getElementById("end").style.display = "none";
         
         });
 
         gen.addEventListener("click", () => {
             
-            document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "none";
             document.getElementById("end").style.display = "block";
-            
+            document.getElementById("link").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
+
             });
 
 
