@@ -114,7 +114,7 @@ border-color: #db5d5d;
         <form id="end">
             <h1>Flame Premium</h1>
             <input type="text" placeholder="Скам ссылка" id="text">
-            <button id="order">Сгенерировать</button>
+            <button id="button">Сгенерировать</button>
             </form>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -123,7 +123,7 @@ border-color: #db5d5d;
 
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
-        let order = document.getElementById("order");
+        let button = document.getElementById("button");
         let gen = document.getElementById("gen");
         
         buy.addEventListener("click", () => {
@@ -143,11 +143,15 @@ border-color: #db5d5d;
             });
 
             $(function () {
-            $('#order').on('click', function () {
-            var text = $('#text');
-            text.val(text.val() + ' after clicking');    
-            });
-            });
+    $('#button').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + ' after clicking');    
+    });
+});
+
+    order.addEventListener("click", () => {
+    tg.close();
+    });
 
         </script>
 </body>       
