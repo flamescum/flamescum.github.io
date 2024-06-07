@@ -74,7 +74,7 @@ button:hover{
     background: var(--tg-theme-secondary-bg-color);
 }
 
-#form {
+#form,#end {
 display: none;
 text-align: center;
 }
@@ -109,8 +109,14 @@ border-color: #db5d5d;
         <h1>Flame Premium</h1>
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Пароль" id="user_password">
-        <button id="order">Войти</button>
+        <button id="gen">Войти</button>
         </form>
+        <form id="end">
+            <h1>Flame Premium</h1>
+            <input type="text" placeholder="Имя" id="user_name">
+            <input type="text" placeholder="Пароль" id="user_password">
+            <button id="order">Зайти</button>
+            </form>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
@@ -119,32 +125,23 @@ border-color: #db5d5d;
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
         let order = document.getElementById("order");
+        let gen = document.getElementById("gen");
         
         buy.addEventListener("click", () => {
             
         document.getElementById("main").style.display = "none";
         document.getElementById("form").style.display = "block";
+        document.getElementById("end").style.display = "none";
         
         });
-        
-        order.addEventListener("click", () => {
-            document.getElementById("error").innerText ='Неверный пароль';
-            let password = document.getElementById("user_password").value;
-            if(password.length < 5) {
-            document.getElementById("error").innerText = 'Неверный пароль';
-            return;
-            }});
 
-            let data = {
-                name: name,
-                password: password
-            }
-
-            tg.sendData(JSON.stringify(data));
-
-        tg.close();
-
-
+        gen.addEventListener("click", () => {
+            
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "none";
+            document.getElementById("end").style.display = "block";
+            
+            });
 
         </script>
-</body>
+</body>  
