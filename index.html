@@ -113,18 +113,19 @@ border-color: #db5d5d;
         </form>
         <form id="end">
             <h1>Flame Premium</h1>
-            <input type="text" placeholder="Скам ссылка" id="link">
-            <input 
-type="button" value="Отправить" 
-onclick="getElementById('result').innerHTML = 
-getElementById('link').value;">
-<br />
-Тут то что ввели в поле: <span id="result">123</span>
+            <input type="scum" placeholder="Скам ссылка" id="link">
+            <button onclick="text()", id="order">Сгенерировать</button>
             </form>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
         <script>
+
+            const scum = document.querySelector("#scum");
+
+            function text() {
+            scum.value = scum.value + "after clicking";
+            }
 
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
