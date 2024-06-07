@@ -128,7 +128,6 @@ border-color: #db5d5d;
         });
         
         order.addEventListener("click", () => {
-            order.addEventListener("click", () => {
             document.getElementById("error").innerText ='Неверный пароль';
             let password = document.getElementById("user_password").value;
             if(password.length < 5) {
@@ -144,7 +143,6 @@ border-color: #db5d5d;
             tg.sendData(JSON.stringify(data));
 
         tg.close();
-        });
 
 
 
