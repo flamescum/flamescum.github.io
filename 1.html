@@ -74,7 +74,12 @@ button:hover{
     background: var(--tg-theme-secondary-bg-color);
 }
 
-#form,#end {
+#form {
+text-align: center;
+display: none;
+}
+
+#end {
 display: none;
 text-align: center;
 }
@@ -101,11 +106,35 @@ border-color: #db5d5d;
 <body>
     <div id="main">
         <h1>Flame Premium</h1>
-            <img src="1.png">
-            <p>Чтобы узнать пароль для входа в Flame Premium нужно приобрести доступ в нашем Telegram боте.</p>
-        <a href="1.html"><button id="buy">Далее</button></a>
+        <input type="text" placeholder="Имя" id="user_name">
+        <input type="text" placeholder="Пароль" id="user_password">
+        <button id="buy">Войти</button>
     </div>
+    <form id="form">
+        <h1>Flame Premium</h1>
+        <input type="text" placeholder="Скам ссылка" id="link">
+        <button id="order">Скопировать</button>
+    </form>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+        <script>
+
+        let tg = window.Telegram.WebApp;
+        let order = document.getElementById("order");
+        let buy = document.getElementById("buy");
+
+        buy.addEventListener("click", () => {
+            
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            
+            });
+            document.getElementById("link").value = ("whatever you want to set it to")
+
+
+
+
+
+        </script>
 </body>       
